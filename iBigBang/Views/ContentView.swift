@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             EpisodesListView()
-                .tabItem { Label("Episodes", systemImage: "tv.fill") }
+                .tabItem { Label("Series", systemImage: "tv.fill") }
             FavEpisodesView()
                 .tabItem { Label("Favorites", systemImage: "heart.fill") }
         }

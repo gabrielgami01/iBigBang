@@ -12,20 +12,26 @@ struct EpisodesListView: View {
     
     var body: some View {
         NavigationStack {
-            List(episodesVM.seasons, id: \.self) { season in
-                Section {
-                    ForEach(season) { episode in
-                        NavigationLink(value: episode) {
-                            EpisodeCell(episode: episode)
-                        }
-                    }
-                } header: {
-                    Text("Season \(season.first?.season ?? 0)")
+            List(episodesVM.displayedEpisodes) { episode in
+                NavigationLink(value: episode) {
+                    EpisodeCell(episode: episode)
                 }
             }
-            .navigationTitle("Big Bang Theory")
+            .navigationTitle("Episodes")
             .navigationDestination(for: Episode.self) { episode in
                 EpisodeDetailsView(editEpisodeVM: EditEpisodeVM(episode: episode))
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Picker(selection: $episodesVM.selectedSeason) {
+                        ForEach(Season.allCases) { season in
+                            Text("Season \(season.rawValue)")
+                        }
+                    } label: {
+                        Text(episodesVM.selectedSeason.rawValue.formatted())
+                    }
+
+                }
             }
         }
     }

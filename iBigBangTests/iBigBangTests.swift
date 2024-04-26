@@ -49,11 +49,11 @@ final class iBigBangTests: XCTestCase {
         XCTAssertEqual(episodesVM.episodes.count, 24)
     }
     
-    func testEpisodesVMSeasons() throws {
-        for season in episodesVM.seasons {
-            let firstEpisode = try XCTUnwrap(season.first)
-            let lastEpisode = try XCTUnwrap(season.last)
-            XCTAssertEqual(firstEpisode.season, lastEpisode.season)
+    func testEpisodesVMFilter() throws {
+        let season = Season.season11
+        episodesVM.selectedSeason = season
+        for episode in episodesVM.displayedEpisodes {
+            XCTAssertEqual(episode.season, season)
         }
     }
     

@@ -15,15 +15,12 @@ final class EpisodesVM: ObservableObject {
             saveData()
         }
     }
+    @Published var selectedSeason: Season = .season1
     
-    var seasons: [[Episode]] {
-        let sortedEpisodes = episodes.sorted { e1, e2 in
+    var displayedEpisodes: [Episode] {
+        episodes.filter{ $0.season == selectedSeason}
+        .sorted { e1, e2 in
             e1.number < e2.number
-        }
-        return Dictionary(grouping: sortedEpisodes) { episode in
-            episode.season
-        }.values.sorted { s1, s2 in
-            (s1.first?.season ?? 0) < (s2.first?.season ?? 0)
         }
     }
     

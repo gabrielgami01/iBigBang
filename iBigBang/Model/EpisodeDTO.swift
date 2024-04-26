@@ -12,7 +12,7 @@ struct EpisodeDTO: Codable {
     let id: Int
     let url: URL
     let name: String
-    let season: Int
+    let season: Season
     let number: Int
     let airdate: String
     let runtime: Int
