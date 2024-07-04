@@ -12,15 +12,17 @@ struct EpisodeGridCell: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            Text(episode.name)
-                .font(.caption)
-                .lineLimit(1)
-            Text("Season \(episode.season.rawValue)")
-                .font(.footnote).foregroundStyle(.secondary)
+            
             Image(episode.image)
                 .resizable()
                 .frame(width: 160, height: 100)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
+            Text("Season \(episode.season.rawValue)")
+                .font(.footnote).foregroundStyle(.secondary)
+            Text(episode.name)
+                .font(.caption)
+                .lineLimit(2, reservesSpace: true)
+                .multilineTextAlignment(.center)
         }
     }
 }
