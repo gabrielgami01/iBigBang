@@ -1,4 +1,4 @@
-# 📺 BigBangTheory Episodes App
+# 📺 iBigBang
 
 Esta aplicación permite visualizar todos los episodios de la serie *BigBangTheory* organizados por temporadas.
 Está diseñada en **SwiftUI** aplicando **Test-Driven Development (TDD)**.
