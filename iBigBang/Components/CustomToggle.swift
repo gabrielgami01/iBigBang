@@ -30,5 +30,5 @@ struct CustomToggle: View {
 }
 
 #Preview {
-    CustomToggle(value: .constant(true), label: "Seen", image: "eye", color: .blue)
+    CustomToggle.preview
 }

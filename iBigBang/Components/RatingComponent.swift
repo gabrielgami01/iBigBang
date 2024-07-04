@@ -39,5 +39,5 @@ struct RatingComponent: View {
 
 
 #Preview {
-    RatingComponent(rating: .constant(3))
+    RatingComponent.preview
 }

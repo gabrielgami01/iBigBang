@@ -28,5 +28,5 @@ struct EpisodeGridCell: View {
 }
 
 #Preview {
-    EpisodeGridCell(episode: .test)
+    EpisodeGridCell.preview
 }

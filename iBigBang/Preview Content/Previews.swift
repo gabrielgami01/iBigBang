@@ -36,3 +36,32 @@ extension FavEpisodesView {
             .environmentObject(EpisodesVM(interactor: BigBangInteractor(urlInteractor: TestingURLS())))
     }
 }
+
+extension EpisodeListCell {
+    static var preview: some View {
+        List {
+            EpisodeListCell(episode: Episode.test)
+        }
+    }
+}
+
+extension EpisodeGridCell {
+    static var preview: some View {
+        List {
+            EpisodeGridCell(episode: .test)
+        }
+    }
+}
+
+extension RatingComponent {
+    static var preview: some View {
+        RatingComponent(rating: .constant(3))
+    }
+}
+
+extension CustomToggle {
+    static var preview: some View {
+        CustomToggle(value: .constant(true), label: "Seen", image: "eye", color: .blue)
+    }
+}
+

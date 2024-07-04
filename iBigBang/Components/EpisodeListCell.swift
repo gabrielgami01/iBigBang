@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EpisodeCell: View {
+struct EpisodeListCell: View {
     let episode: Episode
     
     var body: some View {
@@ -29,7 +29,5 @@ struct EpisodeCell: View {
     }
 }
 #Preview {
-    List {
-        EpisodeCell(episode: Episode.test)
-    }
+    EpisodeListCell.preview
 }

@@ -14,7 +14,7 @@ struct EpisodesListView: View {
         NavigationStack {
             List(episodesVM.displayedEpisodes) { episode in
                 NavigationLink(value: episode) {
-                    EpisodeCell(episode: episode)
+                    EpisodeListCell(episode: episode)
                 }
             }
             .navigationTitle("Episodes")
